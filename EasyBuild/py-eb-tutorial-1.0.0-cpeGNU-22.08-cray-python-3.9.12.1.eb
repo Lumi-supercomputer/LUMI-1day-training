@@ -1,0 +1,42 @@
+easyblock = 'PythonPackage'
+
+local_cray_python_version = '3.9.12.1'
+
+name =          'py-eb-tutorial'
+version =       '1.0.0'
+versionsuffix = f'-cray-python-{local_cray_python_version}'
+
+homepage = 'https://easybuilders.github.io/easybuild-tutorial'
+
+description = """
+This module is installed by an EasyConfig file developed for the 1-day
+LUMI trainings and has no practical use. It serves as an example of
+both dependencies in EasyBuild and installing Python packages in 
+EasyBuild.
+"""
+
+source_urls = ['https://github.com/easybuilders/easybuild-tutorial/raw/main/docs/files/']
+sources =     [SOURCE_TAR_GZ]
+checksums =   ['fcf73a9efc65527a210b993e8889d41ebf05977eef1f6a65ebac3188152cd496']
+
+toolchain = {'name': 'cpeGNU', 'version': '22.08'}
+
+dependencies = [
+    (f'cray-python/{local_cray_python_version}', EXTERNAL_MODULE),
+    ('eb-tutorial', '1.0.1'),
+]
+
+use_pip = True
+
+options = {'modulename': 'eb_tutorial'}
+
+sanity_check_paths = {
+    'files': ['bin/py-eb-tutorial'],
+    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+}
+
+sanity_check_commands = [
+    "py-eb-tutorial"
+]
+
+moduleclass = 'tools'
