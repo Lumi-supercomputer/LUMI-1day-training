@@ -13,6 +13,8 @@ This module is installed by an EasyConfig file developed for the 1-day
 LUMI trainings and has no practical use. It serves as an example of
 both dependencies in EasyBuild and installing Python packages in 
 EasyBuild.
+
+The module provides the py-eb-tutorial command.
 """
 
 source_urls = ['https://github.com/easybuilders/easybuild-tutorial/raw/main/docs/files/']
