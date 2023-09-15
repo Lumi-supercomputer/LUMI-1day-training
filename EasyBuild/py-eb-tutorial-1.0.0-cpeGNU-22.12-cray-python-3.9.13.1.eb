@@ -1,6 +1,6 @@
 easyblock = 'PythonPackage'
 
-local_cray_python_version = '3.9.12.1'
+local_cray_python_version = '3.9.13.1'
 
 name =          'py-eb-tutorial'
 version =       '1.0.0'
@@ -21,7 +21,7 @@ source_urls = ['https://github.com/easybuilders/easybuild-tutorial/raw/main/docs
 sources =     [SOURCE_TAR_GZ]
 checksums =   ['fcf73a9efc65527a210b993e8889d41ebf05977eef1f6a65ebac3188152cd496']
 
-toolchain = {'name': 'cpeGNU', 'version': '22.08'}
+toolchain = {'name': 'cpeGNU', 'version': '22.12'}
 
 dependencies = [
     (f'cray-python/{local_cray_python_version}', EXTERNAL_MODULE),
